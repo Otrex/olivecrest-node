@@ -1,0 +1,28 @@
+
+
+
+          <div class="row">
+          <% plans.forEach(function(plan) { %>
+            <div class="col-md-4 grid-margin stretch-card">
+              <div class="card plan">
+                <div class="card-body">
+                  <p class="card-title title"><%=plan.name%></p>
+                  <div id="returns" class="returns"><%=plan.percentReturns%></div>
+                  <div id="features" class="features"><ul><%-plan.features%></ul></div>
+                  <div id="description" class="description"><%=plan.description%></div>
+                </div>
+                <div class="row">
+                	<div class="col-md-6">
+                		<button class="btn btn-lg btn-outline-light text-primary rounded-0 border-0 d-none d-md-block" type="button"> View All </button>
+                	</div>
+                	<div class="col-md-6">
+                		<button class="btn btn-lg btn-outline-light text-primary rounded-0 border-0 d-none d-md-block btn-success" type="button"> Select Plan </button>
+                	</div>
+                </div>
+              </div>
+            </div>
+          <% }); %>
+          </div>
+          
+          
+        

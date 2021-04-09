@@ -1,0 +1,599 @@
+{
+  "version": 6,
+  "entities": [
+    {
+      "entity": {
+        "type": "Project",
+        "id": "52a9ebb6-b1db-4d1c-b11e-b0db64f318f0",
+        "name": "SCARFOLDING"
+      },
+      "children": [
+        {
+          "entity": {
+            "type": "Service",
+            "id": "0d3b8618-52de-44c5-adb0-5ed3f1483ae7",
+            "name": "UserController"
+          },
+          "children": [
+            {
+              "entity": {
+                "type": "Request",
+                "method": {
+                  "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+                  "name": "GET"
+                },
+                "body": {
+                  "formBody": {
+                    "overrideContentType": true,
+                    "encoding": "application/x-www-form-urlencoded",
+                    "items": []
+                  },
+                  "bodyType": "Text"
+                },
+                "uri": {
+                  "query": {
+                    "delimiter": "&",
+                    "items": []
+                  },
+                  "scheme": {
+                    "name": "http",
+                    "version": "V11"
+                  },
+                  "host": "127.0.0.1:5000",
+                  "path": "/admin/users/all"
+                },
+                "id": "8841b66b-23b8-4764-b957-26760f88b29b",
+                "name": "USERS.all",
+                "headers": [
+                  {
+                    "enabled": true,
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwNmIxMjVlNjJkOTRjMmZiNGNjN2ZlMiIsImlhdCI6MTYxNzYzMjYyOCwiZXhwIjoxNjE3NjM2MjI4fQ.sq0EMQV1ElLElLMBke5mOiCMX-SaWg_3n6wHyXxsKD0"
+                  }
+                ]
+              }
+            },
+            {
+              "entity": {
+                "type": "Request",
+                "method": {
+                  "link": "http://tools.ietf.org/html/rfc7231#section-4.3.5",
+                  "name": "DELETE"
+                },
+                "body": {
+                  "formBody": {
+                    "overrideContentType": true,
+                    "encoding": "application/x-www-form-urlencoded",
+                    "items": []
+                  },
+                  "bodyType": "Text"
+                },
+                "uri": {
+                  "query": {
+                    "delimiter": "&",
+                    "items": []
+                  },
+                  "scheme": {
+                    "name": "http",
+                    "version": "V11"
+                  },
+                  "host": "127.0.0.1:5000",
+                  "path": "/admin/users/delete/606b14893dfb3a26dc17899b"
+                },
+                "id": "fec3152f-55c6-4560-81ee-b04bdba38e67",
+                "name": "USERS.deleteOne",
+                "headers": [
+                  {
+                    "enabled": true,
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwNmIxMjVlNjJkOTRjMmZiNGNjN2ZlMiIsImlhdCI6MTYxNzYzODIxNiwiZXhwIjoxNjE3NjQxODE2fQ.yLMXbKlW2Dt5xEXqYJbFJK1l5exo8zAU8S8LNQjpXF8"
+                  }
+                ]
+              }
+            },
+            {
+              "entity": {
+                "type": "Request",
+                "method": {
+                  "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+                  "name": "GET"
+                },
+                "body": {
+                  "formBody": {
+                    "overrideContentType": true,
+                    "encoding": "application/x-www-form-urlencoded",
+                    "items": []
+                  },
+                  "bodyType": "Text"
+                },
+                "uri": {
+                  "query": {
+                    "delimiter": "&",
+                    "items": []
+                  },
+                  "scheme": {
+                    "name": "http",
+                    "version": "V11"
+                  },
+                  "host": "127.0.0.1:5000",
+                  "path": "/admin/users/get/606b125e62d94c2fb4cc7fe2"
+                },
+                "id": "14f7a334-5a33-4998-ab9c-f988d49d67c4",
+                "name": "USERS.findone",
+                "headers": [
+                  {
+                    "enabled": true,
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwNmIxMjVlNjJkOTRjMmZiNGNjN2ZlMiIsImlhdCI6MTYxNzYzODIxNiwiZXhwIjoxNjE3NjQxODE2fQ.yLMXbKlW2Dt5xEXqYJbFJK1l5exo8zAU8S8LNQjpXF8"
+                  }
+                ]
+              }
+            },
+            {
+              "entity": {
+                "type": "Request",
+                "method": {
+                  "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+                  "name": "GET"
+                },
+                "body": {
+                  "formBody": {
+                    "overrideContentType": true,
+                    "encoding": "application/x-www-form-urlencoded",
+                    "items": []
+                  },
+                  "bodyType": "Text"
+                },
+                "uri": {
+                  "query": {
+                    "delimiter": "&",
+                    "items": [
+                      {
+                        "enabled": true,
+                        "name": "limit",
+                        "value": "1"
+                      },
+                      {
+                        "enabled": true,
+                        "name": "page",
+                        "value": "3"
+                      }
+                    ]
+                  },
+                  "scheme": {
+                    "name": "http",
+                    "version": "V11"
+                  },
+                  "host": "127.0.0.1:5000",
+                  "path": "/admin/users/paginate"
+                },
+                "id": "16167123-7a1c-4245-8578-bf9ee208fed9",
+                "name": "USERS.paginate",
+                "headers": [
+                  {
+                    "enabled": true,
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwNmIxMjVlNjJkOTRjMmZiNGNjN2ZlMiIsImlhdCI6MTYxNzYzNzI5NSwiZXhwIjoxNjE3NjQwODk1fQ.40KOUoZyDFiBrll2_MOPaMw5Fr-z7GkWey2FWVmfw7c"
+                  }
+                ]
+              }
+            },
+            {
+              "entity": {
+                "type": "Request",
+                "method": {
+                  "requestBody": true,
+                  "link": "http://tools.ietf.org/html/rfc7231#section-4.3.4",
+                  "name": "PUT"
+                },
+                "body": {
+                  "formBody": {
+                    "overrideContentType": true,
+                    "encoding": "application/x-www-form-urlencoded",
+                    "items": [
+                      {
+                        "enabled": true,
+                        "type": "Text",
+                        "name": "username",
+                        "value": "rex"
+                      }
+                    ]
+                  },
+                  "bodyType": "Form"
+                },
+                "uri": {
+                  "query": {
+                    "delimiter": "&",
+                    "items": []
+                  },
+                  "scheme": {
+                    "name": "http",
+                    "version": "V11"
+                  },
+                  "host": "127.0.0.1:5000",
+                  "path": "/admin/users/update/606b125e62d94c2fb4cc7fe2"
+                },
+                "id": "cd0ecf6f-1a06-4017-8fb9-f7d0d500c037",
+                "name": "USERS.updateOne",
+                "headers": [
+                  {
+                    "enabled": true,
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwNmIxMjVlNjJkOTRjMmZiNGNjN2ZlMiIsImlhdCI6MTYxNzYzODIxNiwiZXhwIjoxNjE3NjQxODE2fQ.yLMXbKlW2Dt5xEXqYJbFJK1l5exo8zAU8S8LNQjpXF8"
+                  },
+                  {
+                    "enabled": true,
+                    "name": "Content-Type",
+                    "value": "application/x-www-form-urlencoded"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "entity": {
+            "type": "Scenario",
+            "id": "a7369994-c80d-4911-b77a-08391f809fa8",
+            "name": "otheruser"
+          },
+          "children": [
+            {
+              "entity": {
+                "type": "Request",
+                "method": {
+                  "requestBody": true,
+                  "link": "http://tools.ietf.org/html/rfc7231#section-4.3.3",
+                  "name": "POST"
+                },
+                "body": {
+                  "formBody": {
+                    "overrideContentType": true,
+                    "encoding": "application/x-www-form-urlencoded",
+                    "items": []
+                  },
+                  "bodyType": "Text",
+                  "textBody": "{\n  \"email\": \"obisiket@yahoo.com\",\n  \"password\": \"5obggj\",\n  \"username\":\"Treasure\",\n  \"country\":\"Nigeria\"\n}"
+                },
+                "uri": {
+                  "query": {
+                    "delimiter": "&",
+                    "items": []
+                  },
+                  "scheme": {
+                    "name": "http",
+                    "version": "V11"
+                  },
+                  "host": "127.0.0.1:5000",
+                  "path": "/auth/register"
+                },
+                "id": "b1f1faea-32cf-4faa-bc9f-bee673bc5514",
+                "name": "REGISTER",
+                "headers": [
+                  {
+                    "enabled": true,
+                    "name": "Content-Type",
+                    "value": "application/json"
+                  }
+                ]
+              }
+            },
+            {
+              "entity": {
+                "type": "Request",
+                "method": {
+                  "requestBody": true,
+                  "link": "http://tools.ietf.org/html/rfc7231#section-4.3.3",
+                  "name": "POST"
+                },
+                "body": {
+                  "formBody": {
+                    "overrideContentType": true,
+                    "encoding": "application/x-www-form-urlencoded",
+                    "items": []
+                  },
+                  "bodyType": "Text",
+                  "textBody": "{\n  \"email\": \"obisiket@yahoo.com\",\n  \"password\": \"obisiket1\"\n}"
+                },
+                "uri": {
+                  "query": {
+                    "delimiter": "&",
+                    "items": []
+                  },
+                  "scheme": {
+                    "name": "http",
+                    "version": "V11"
+                  },
+                  "host": "127.0.0.1:5000",
+                  "path": "/auth/login"
+                },
+                "id": "a3958213-bda0-4d13-9d52-06a98766acf6",
+                "name": "LOGIN",
+                "headers": [
+                  {
+                    "enabled": true,
+                    "name": "Content-Type",
+                    "value": "application/json"
+                  }
+                ]
+              }
+            },
+            {
+              "entity": {
+                "type": "Request",
+                "method": {
+                  "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+                  "name": "GET"
+                },
+                "body": {
+                  "formBody": {
+                    "overrideContentType": true,
+                    "encoding": "application/x-www-form-urlencoded",
+                    "items": []
+                  },
+                  "bodyType": "Text"
+                },
+                "uri": {
+                  "query": {
+                    "delimiter": "&",
+                    "items": []
+                  },
+                  "scheme": {
+                    "name": "http",
+                    "version": "V11"
+                  },
+                  "host": "127.0.0.1:5000",
+                  "path": "/auth/verify/606b14893dfb3a26dc17899b/ZGXtNbDcYsKtpYEhdimWwSvvf08DPbw9"
+                },
+                "id": "0a85db91-b9fb-4fe5-9d07-0d3acf23485e",
+                "name": "Copy of VERIFY",
+                "headers": []
+              }
+            }
+          ]
+        },
+        {
+          "entity": {
+            "type": "Request",
+            "method": {
+              "requestBody": true,
+              "link": "http://tools.ietf.org/html/rfc7231#section-4.3.3",
+              "name": "POST"
+            },
+            "body": {
+              "formBody": {
+                "overrideContentType": true,
+                "encoding": "application/x-www-form-urlencoded",
+                "items": []
+              },
+              "bodyType": "Text",
+              "textBody": "{\n  \"email\": \"obisiket@gmail.com\",\n  \"password\": \"5obggj\",\n  \"username\":\"Treasure\",\n  \"country\":\"Nigeria\"\n}"
+            },
+            "uri": {
+              "query": {
+                "delimiter": "&",
+                "items": []
+              },
+              "scheme": {
+                "name": "http",
+                "version": "V11"
+              },
+              "host": "127.0.0.1:5000",
+              "path": "/auth/admin/register"
+            },
+            "id": "e018e2a6-9783-4d78-8396-732fcbed7095",
+            "name": "AdminREGISTER",
+            "headers": [
+              {
+                "enabled": true,
+                "name": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "enabled": true,
+                "name": "Authorization",
+                "value": "Basic U2M6b2Jpc2lrZXQ="
+              }
+            ]
+          }
+        },
+        {
+          "entity": {
+            "type": "Request",
+            "method": {
+              "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+              "name": "GET"
+            },
+            "body": {
+              "formBody": {
+                "overrideContentType": true,
+                "encoding": "application/x-www-form-urlencoded",
+                "items": []
+              },
+              "bodyType": "Text"
+            },
+            "uri": {
+              "query": {
+                "delimiter": "&",
+                "items": [
+                  {
+                    "enabled": true,
+                    "name": "email",
+                    "value": "obisiket@gmail.com"
+                  }
+                ]
+              },
+              "scheme": {
+                "name": "http",
+                "version": "V11"
+              },
+              "host": "127.0.0.1:5000",
+              "path": "/auth/pwtoken"
+            },
+            "id": "740dcccb-7a00-47d3-8ea9-57de07bf4483",
+            "name": "GetPWTOKEN",
+            "headers": [
+              {
+                "enabled": true,
+                "name": "",
+                "value": ""
+              }
+            ]
+          }
+        },
+        {
+          "entity": {
+            "type": "Request",
+            "method": {
+              "requestBody": true,
+              "link": "http://tools.ietf.org/html/rfc7231#section-4.3.3",
+              "name": "POST"
+            },
+            "body": {
+              "formBody": {
+                "overrideContentType": true,
+                "encoding": "application/x-www-form-urlencoded",
+                "items": []
+              },
+              "bodyType": "Text",
+              "textBody": "{\n  \"email\": \"obisiket@gmail.com\",\n  \"password\": \"obisiket1\"\n}"
+            },
+            "uri": {
+              "query": {
+                "delimiter": "&",
+                "items": []
+              },
+              "scheme": {
+                "name": "http",
+                "version": "V11"
+              },
+              "host": "127.0.0.1:5000",
+              "path": "/auth/login"
+            },
+            "id": "19a76001-bbfa-4e4d-b948-55055e5341b9",
+            "name": "LOGIN",
+            "headers": [
+              {
+                "enabled": true,
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          }
+        },
+        {
+          "entity": {
+            "type": "Request",
+            "method": {
+              "requestBody": true,
+              "link": "http://tools.ietf.org/html/rfc7231#section-4.3.3",
+              "name": "POST"
+            },
+            "body": {
+              "formBody": {
+                "overrideContentType": true,
+                "encoding": "application/x-www-form-urlencoded",
+                "items": []
+              },
+              "bodyType": "Text",
+              "textBody": "{\n  \"email\": \"obisiket@gmail.com\",\n  \"password\": \"5obggj\",\n  \"username\":\"Treasure\",\n  \"country\":\"Nigeria\"\n}"
+            },
+            "uri": {
+              "query": {
+                "delimiter": "&",
+                "items": []
+              },
+              "scheme": {
+                "name": "http",
+                "version": "V11"
+              },
+              "host": "127.0.0.1:5000",
+              "path": "/auth/register"
+            },
+            "id": "bf92632a-dd14-42da-9f1f-69ceceff4442",
+            "name": "REGISTER",
+            "headers": [
+              {
+                "enabled": true,
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          }
+        },
+        {
+          "entity": {
+            "type": "Request",
+            "method": {
+              "requestBody": true,
+              "link": "http://tools.ietf.org/html/rfc7231#section-4.3.3",
+              "name": "POST"
+            },
+            "body": {
+              "formBody": {
+                "overrideContentType": true,
+                "encoding": "application/x-www-form-urlencoded",
+                "items": []
+              },
+              "bodyType": "Text",
+              "textBody": "{\n  \"email\":\"obisiket@gmail.com\",\n  \"token\":\"7JC0B76\",\n  \"password\":\"obisiket1\"\n}"
+            },
+            "uri": {
+              "query": {
+                "delimiter": "&",
+                "items": []
+              },
+              "scheme": {
+                "name": "http",
+                "version": "V11"
+              },
+              "host": "127.0.0.1:5000",
+              "path": "/auth/password-reset"
+            },
+            "id": "d4f9e501-26d6-49e8-ae5f-c86aa6c99698",
+            "name": "ResetPASSWORD",
+            "headers": [
+              {
+                "enabled": true,
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          }
+        },
+        {
+          "entity": {
+            "type": "Request",
+            "method": {
+              "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+              "name": "GET"
+            },
+            "body": {
+              "formBody": {
+                "overrideContentType": true,
+                "encoding": "application/x-www-form-urlencoded",
+                "items": []
+              },
+              "bodyType": "Text"
+            },
+            "uri": {
+              "query": {
+                "delimiter": "&",
+                "items": []
+              },
+              "scheme": {
+                "name": "http",
+                "version": "V11"
+              },
+              "host": "127.0.0.1:5000",
+              "path": "/auth/verify/606b125e62d94c2fb4cc7fe2/1X7KI5DcsF8N8eKzvsZaN75OwabhLFmw"
+            },
+            "id": "3b4dc188-9735-450c-af25-e41e69c58dd9",
+            "name": "VERIFY",
+            "headers": []
+          }
+        }
+      ]
+    }
+  ]
+}
