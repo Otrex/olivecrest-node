@@ -8,7 +8,7 @@ require("./database").connect()
 const app = require('./app')
 
 // Port SetUp
-PORT = process.env.APP_PORT || 3000
+PORT = process.env.PORT || 3000
 
 // Serve App
 app.listen(PORT, ()=>{
