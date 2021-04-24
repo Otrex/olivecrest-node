@@ -1,5 +1,6 @@
 
 const User = require('../Models/UserModel')
+const Token = require('../Models/extras/TokenModel')
 const { RequestError, JWTError } = require('../../services/Exceptions')
 const catchAsync = require('../../services/core/CatchAsync')
 const jwt = require('jsonwebtoken')
@@ -59,6 +60,32 @@ exports.authenticated = catchAsync(async (req, res, next) => {
     // if(currentUser.changedPasswordAfter(decodedToken.iat)){
     //     return next(new AppError(`user just currently changed password... try again`, 401))
     // }
+
+    if (!currentUser.role.admin) {
+        let token = Token.findOne({user_id : currentUser._id})
+        if (token) throw new RequestError("Please verify your token")
+    }
+
+    req.user = currentUser;
+    next(null, req); 
+})
+
+exports.getUserFromJWT = catchAsync(async (req, res, next)=>{
+    let token;
+
+    if(req.headers.authorization && req.headers.authorization.startsWith('Bearer')){
+        token= req.headers.authorization.split(' ')[1] 
+    }
+
+    if(!token) throw new RequestError(`User Not Authenticated`, 401)
+
+    const decodedToken = await promisify(jwt.verify)(token, process.env.JWT_SECRET) 
+
+    const currentUser= await User.findById(decodedToken.id);
+    
+    if(!currentUser) throw new JWTError(`User bearing this token does not exist.`, 401)
+
+    if (currentUser.isVerified === false) throw new RequestError('User Not Verified', 400)
 
     req.user = currentUser;
     next(null, req); 

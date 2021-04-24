@@ -34,6 +34,7 @@ route.get('/home', catchAsync(async(req, res)=>{
 
 // User Must be in req
 route.get('/', catchAsync(async(req, res)=>{
+	// console.log(res)
 	// if (!req.user) return res.redirect('/')
 	DEF.title = "Home"
 	// overview = await WalletController.walletOverview(req)
@@ -56,25 +57,28 @@ route.get('/', catchAsync(async(req, res)=>{
 
 route.get('/plans', (req, res)=>{
 	DEF.title = "Plans"
-	req.user = { username: "obisiket1", password: "xq23f" }
+	req.user = { username: "obisiket1", password: "xq23f", role: {is_admin: true} }
 
 	user = _.omit(req.user, ['password'])
 
 	// Testing
 	plans = [
 		{
+			_id : 1,
 			name: "Gold",
 			percentReturns: "50",
 			features: "<li>Great</li><li>Bigger</li>",
 			description: "This is the best i have ever seen"
 		},
 		{
+			_id : 2,
 			name: "Gold",
 			percentReturns: "70",
 			features: "<li>Great</li><li>Bigger</li>",
 			description: "This is the best i have ever seen"
 		},
 		{
+			_id : 3,
 			name: "Silver",
 			percentReturns: "50",
 			features: "<li>Great</li><li>Bigger</li>",
@@ -124,10 +128,26 @@ route.get('/pay', (req, res)=>{
 
 	user = _.omit(req.user, ['password'])
 
-	// Testing
-	
 	res.render('dashboard/pay', { ...DEF, user })
 })
 
+
+route.get('/settings', (req, res)=>{
+	DEF.title = "Settings"
+	req.user = { username: "obisiket1", password: "xq23f" }
+
+	user = _.omit(req.user, ['password'])
+
+	res.render('dashboard/settings', { ...DEF, user })
+})
+
+route.get('/support', (req, res)=>{
+	DEF.title = "Support"
+	req.user = { username: "obisiket1", password: "xq23f" }
+
+	user = _.omit(req.user, ['password'])
+
+	res.render('dashboard/support', { ...DEF, user })
+})
 
 module.exports = route

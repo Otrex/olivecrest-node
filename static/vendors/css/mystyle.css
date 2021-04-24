@@ -115,3 +115,11 @@ button.btn-success:hover {
 	background-color: rgb(250,250,250);
 	box-shadow: inset 0px 0px 6px rgba(0,0,0,.2);
 }
+
+.a-plan {
+
+}
+
+ol.a-plan > li {
+	margin-bottom: 20px;
+}

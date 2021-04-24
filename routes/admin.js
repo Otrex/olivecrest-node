@@ -2,6 +2,7 @@
 const route = require('express').Router()
 const APIresource = require('../services/core/APIresource')
 const User = require('../http/Models/UserModel')
+const Plan = require('../http/Models/PlanModel')
 
 // User APIresoures
 /*
@@ -12,5 +13,6 @@ const User = require('../http/Models/UserModel')
 	DELETE /:resourcename/delete/:id
 */
 APIresource.with('users', User , route).generate()
+APIresource.with('plans', Plan , route).generate()
 
 module.exports = route

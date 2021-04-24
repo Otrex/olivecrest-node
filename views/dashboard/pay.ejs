@@ -61,17 +61,21 @@
                       <div class="form-group">
                         <div class="input-group">
                           <div class="input-group-prepend">
-                            <button class="btn btn-sm btn-outline-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</button>
-                            <div class="dropdown-menu" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 46px, 0px);">
-                              <a class="dropdown-item" href="#">Action</a>
-                              <a class="dropdown-item" href="#">Another action</a>
-                              <a class="dropdown-item" href="#">Something else here</a>
-                              <div role="separator" class="dropdown-divider"></div>
-                              <a class="dropdown-item" href="#">Separated link</a>
+                            <button class="btn btn-sm btn-outline-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true"  onclick="makeCharge(this)" aria-expanded="false">Dropdown</button>
+                            <div class="dropdown-menu" id="makecharge" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 46px, 0px);">
+                              <a class="dropdown-item" coin-id="bitcoin" >Bitcoin BTC</a>
+                              <a class="dropdown-item" coin-id="ethereum" >Ethereum ETH</a>
+                              <a class="dropdown-item" coin-id="litecoin" >Litecoin LTC</a>
+                             <!-- <a class="dropdown-item" coin-id="xrp" >Ripple XRP</a>-->
+                              <a class="dropdown-item" coin-id="usdc" >USDC</a>
                             </div>
                           </div>
                           <input type="text" class="form-control" aria-label="Text input with dropdown button">
                         </div>
+                      </div>
+
+                      <div class="qr-code">
+                        <img id="qrImg" />
                       </div>
                     
                     

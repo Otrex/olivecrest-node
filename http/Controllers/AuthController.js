@@ -70,6 +70,7 @@ exports.login = catchAsync(async (req, res, next) => {
     if(process.env.APP_MODE ==='PRODUCTION') cookieOptions.secure= true;
 
     res.cookie('jwt', token, cookieOptions)
+    res.setHeader("Authorization", `Bearer ${token}`)
 
 	res.status(200).json({
 		status : 'ok',
@@ -142,3 +143,23 @@ exports.verify = catchAsync(async (req, res, next) => {
 exports.logout = (req, res)=>{
 	res.redirect("/")
 }
+
+exports.dashboardRedirect = (req, res)=> {
+	res.redirect("/dash")
+}
+
+exports.verifyAccessToken = catchAsync(async(req,res, next)=>{
+	let token = Token.findOne({user_id :req.user._id})
+	if (!token) throw new RequestError("Please Request for a new token")
+
+	let vtoken = req.query.token
+	if (vtoken != token.token) {
+		await token.delete()
+		throw new RequestError("Token DO not Match")
+	} 
+	await token.delete()
+	res.status(200).json({
+		status: "ok",
+		message :"Access token verified"
+	})
+})

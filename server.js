@@ -2,7 +2,7 @@
 require("dotenv").config({path : "./.env"})
 
 // Connect App to DB
-require("./database").connect()
+// require("./database").connect()
 
 // App SetUp
 const app = require('./app')

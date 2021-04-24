@@ -7,10 +7,13 @@ const hpp = require('hpp')
 const express = require("express")
 const path = require("path")
 var expressLayouts = require('express-ejs-layouts');
+var coinbase = require('coinbase-commerce-node');
 
+var Client = coinbase.Client;
 // Init App
 const app = express()
 
+Client.init(process.env.COINBASE_C_API_KEY);
 // Error Handler
 const { errorHandler } = require("./services/core/Exception")
 
@@ -64,7 +67,7 @@ app.use((req, res, next) => {
 if (process.env.APP_MODE == 'DEVELOPMENT'){
 	app.use((req, res, next) => {
 		console.log(`::VISITING: ${req.url}`)
-        console.log(`::QUERY: ${JSON.stringify(req.body || req.query)}`)
+        console.log(`::QUERY: ${JSON.stringify(req.body /*|| req.query*/)}`)
         console.log(`---------------------------------------------`)
 		next()
 	})
@@ -80,6 +83,7 @@ app.use('/', require('./routes/home'))
 app.use('/auth', require('./routes/auth'))
 app.use('/dash', require('./routes/dashboard'))
 app.use('/paystack', require('./routes/paystack'))
+app.use('/cc', require('./routes/coinbase_c'))
 app.use('/admin', Verify.authenticated, Restrict.to({ admin: true }), require('./routes/admin'))
 
 // Error Handler route

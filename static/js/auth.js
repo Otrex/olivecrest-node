@@ -78,7 +78,7 @@ const app = (function(win, doc){
 
 				const continueBtn = doc.querySelector('#m-continue')
 				continueBtn.addEventListener('click', (event) => {
-					location.href = "/dashboard"
+					location.href = "/dash/"
 					//
 						// fetch("/auth/access-token", {
 						// 	method : "POST",
@@ -141,13 +141,13 @@ const app = (function(win, doc){
 		.then(json => {
 			if (json.status === "failed") {
 				modalMsg.innerHTML = "Registeration Failed: "+ json.message
-				modalMsg.innerHTML = "Failed"
+				modalTitle.innerHTML = "Failed"
 				win.icon.classList.remove('show')
 				win.show()
 				return
 			}
 			modalMsg.innerHTML = "Registeration Successful<br>Check Your Email For Further Verification"
-			modalMsg.innerHTML = "Successful"
+			modalTitle.innerHTML = "Successful"
 			win.icon.classList.remove('show')
 			win.show()
 		}).catch(err => console.log(err));

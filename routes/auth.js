@@ -34,4 +34,9 @@ route.get('/verify/:id/:token', AuthController.verify)
 //Verify Email Token
 route.get('/logout', AuthController.logout)
 
+
+route.get('/to-dash', AuthController.dashboardRedirect)
+
+route.get('/verifyaccesstoken', Verify.getUserFromJWT, AuthController.verifyAccessToken)
+
 module.exports = route

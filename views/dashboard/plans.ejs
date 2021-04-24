@@ -1,5 +1,66 @@
+        <% if (user.role.is_admin){ %>
+          <div class="row">
+            <div class="col-md-6 grid-margin">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">PLANS</h4>
+                  <p class="card-description">
+                    Here are the list of plans you have set..
+                  </p>
+                  <ol class="a-plan">
+                  <% plans.forEach(function(plan) { %>
+                    <li>
+                      <div class="a-plan-list" >
+
+                      <h4>Name: <%=plan.name%> </h4>
+                      <h4>Percentage Returns: <%=plan.percentReturns%> </h4>
+                      <h4>Features: <ul><%-plan.features%></ul></h4>
+                      <h4>Description: <%=plan.description%> </h4>
+                      <button type="submit" data-label="<%=plan._id%>" class="btn btn-primary mr-2 r1 edit">EDIT</button>
+                      <button class="btn btn-light delete" data-label="<%=plan._id%>">DELETE</button>
+                      </div>
+                    </li>
+                  <% }) %>
+                  </ol>
+                  
+                </div>
+              </div>
+            </div>
+            
+            <div class="col-md-6 grid-margin">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">DETAILS</h4>
+                  <p class="card-description">
+                    Basic form layout
+                  </p>
+
+                    <div class="form-group">
+                      <label for="exampleInputPassword1">Name</label>
+                      <input type="text" class="form-control r1" id="exampleInputPassword1" placeholder="Plan Name">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputConfirmPassword1">Percentage Returns</label>
+                      <input type="text" class="form-control r1" id="exampleInputConfirmPassword1" placeholder="Returns">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputConfirmPassword1">Features #1</label>
+                      <input type="text" class="form-control r1 feature" id="exampleInputConfirmPassword1" placeholder="Returns">
+                      <button class="btn btn-primary mr-2 r1" onclick="addFInput(this)">Add Feature</button>
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputPassword1">Description</label>
+                      <textarea class="form-control r1" id="plan-description" placeholder="Plan Description"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary mr-2 r1">Submit</button>
+                    <button class="btn btn-light">Cancel</button>
 
 
+                </div>
+              </div>
+            </div>
+          </div>
+        <% } else { %>
 
           <div class="row">
           <% plans.forEach(function(plan) { %>
@@ -23,6 +84,8 @@
             </div>
           <% }); %>
           </div>
+
+          <% } %>
           
           
         

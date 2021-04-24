@@ -1,5 +1,24 @@
 (function($) {
   'use strict';
+
+  var plans = document.querySelector('.a-plan');
+  if (plans) {
+    var deleteBtns = plans.querySelectorAll('.delete');
+    var editBtns = plans.querySelectorAll('.edit');
+    deleteBtns.forEach(btn => {
+      btn.addEventListener ('click', function(e){
+        var _id = this.getAttribute('data-label')
+        alert(_id)
+      })
+    })
+
+    editBtns.forEach(btn => {
+      btn.addEventListener ('click', function(e){
+        var _id = this.getAttribute('data-label')
+        alert(_id)
+      })
+    })
+  }
   $(function() {
     if ($("#order-chart").length) {
       var areaData = {
@@ -234,3 +253,39 @@
 
   });
 })(jQuery);
+
+function makeCharge(el){
+  var el2 = el.parentNode.children[1], input = el.parentNode.parentNode.children[1],
+  links = el2.children, img = document.querySelector('#qrImg');
+  // console.log(links)
+  /// Make the charge
+  fetch(url.makeCharge)
+  .then(res => res.json())
+  .then(json => {
+      for (var i = 0; i < links.length; i++ ){
+        var link = links[i]
+        link.addEventListener('click', function(){
+          var type = this.getAttribute('coin-id'), data = json.event.addresses;
+          input.value = data[type]
+          img.src = `https://chart.googleapis.com/chart?chs=150x150&cht=qr&chl=${type}:${input.value}&choe=UTF-8`
+        })
+      }
+  })
+  .catch (err=> {
+    alert(err)
+  })
+}
+
+function addFInput(el){
+  var btn = el
+  btn.style.display='none'
+  if (!window.i) window.i = 2
+  var div = document.createElement('div')
+  div.setAttribute('class', 'form-group')
+  div.innerHTML = `<label for="exampleInputConfirmPassword1">Features #${window.i}</label>
+  <input type="text" class="form-control r1 feature" id="exampleInputConfirmPassword1" placeholder="Returns">
+  <button class="btn btn-primary mr-2 r1" onclick="addFInput(this)">Add Feature</button>`
+  btn.parentNode.appendChild(div)
+  window.i++
+} 
+
